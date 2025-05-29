@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Praval Sugandhi - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+        body {
+  background: #121212;
+  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(135deg, #4ce1b6, #00bfa5);
+  padding: 100px 20px 60px;
+  text-align: center;
+  color: #121212;
+  border-radius: 0 0 60px 60px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,191,165,0.5);
+}
+
+header h1 {
+  font-size: 4.2rem;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+header h1:hover {
+  transform: scale(1.08);
+}
+
+header p {
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 70%);
+  animation: animateBg 15s linear infinite;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+@keyframes animateBg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #4ce1b6;
+  font-weight: 700;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #00bfa5;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: #4ce1b6;
+  border-radius: 4px;
+}
+
+.slider::-webkit-scrollbar-track {
+  background: #22232c;
+}
+
+.project-card, .cert-card, .contact-card {
+  flex: 0 0 300px;
+  background: linear-gradient(145deg, #1e1f29, #23242f);
+  padding: 28px 24px;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 15px rgba(76, 225, 182, 0.3),
+    inset 0 0 8px rgba(76, 225, 182, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+}
+
+.project-card:hover, .cert-card:hover, .contact-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 18px 25px rgba(76, 225, 182, 0.6),
+    inset 0 0 15px rgba(76, 225, 182, 0.25);
+}
+
+.project-card h4, .cert-card h4, .contact-card p {
+  margin-top: 0;
+  font-weight: 600;
+  color: #00ffa1;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.project-card p, .cert-card p, .contact-card p {
+  color: #cfd8dc;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 12px;
+  background: #1f1f28;
+  color: #aaa;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.social-links {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.social-links a {
+  color: #4ce1b6;
+  margin: 0 16px;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00ffa1;
+  transform: scale(1.2);
+}
+
+.contact-card a {
+  color: #00ffa1;
+  text-decoration: none;
+  word-break: break-word;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .project-card, .cert-card, .contact-card {
+    flex: 0 0 250px;
+    padding: 20px 18px;
+    min-height: 150px;
+  }
+
+  header h1 {
+    font-size: 3.2rem;
+  }
+
+  header p {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+/* Smaller adjustments for project cards */
+.project-card h4 {
+  margin-bottom: 6px;  /* smaller bottom margin than before */
+}
+
+.project-card p {
+  margin-top: 5px;  /* remove default top margin */
+}
+/* Unify dimensions for all card types */
+.project-card, .cert-card, .contact-card {
+  flex: 0 0 320px; /* slightly wider */
+  min-height: 220px;
+  background: linear-gradient(145deg, #1e1f29, #23242f);
+  padding: 28px 24px;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 15px rgba(76, 225, 182, 0.3),
+    inset 0 0 8px rgba(76, 225, 182, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Improve text spacing */
+.project-card h4, .cert-card h4, .contact-card h4 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00ffa1;
+  margin-bottom: 10px;
+}
+
+.project-card p, .cert-card p, .contact-card p {
+  color: #cfd8dc;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .project-card, .cert-card, .contact-card {
+    flex: 0 0 260px;
+    padding: 20px;
+    min-height: 180px;
+  }
+}
+.slider {
+  gap: 16px; /* was 24px */
+}
+/* --- Compact Grid for Skills Section --- */
+#skills .slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  overflow-x: unset;
+  padding: 0;
+  scroll-snap-type: none;
+}
+
+#skills .project-card {
+  min-height: auto;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+#skills .project-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #4ce1b6;
+}
+
+#skills .project-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cfd8dc;
+}
+
+/* Optional: Add icons before skill categories */
+#skills .project-card h4::before {
+  content: "\f007"; /* Font Awesome user icon */
+  display: inline-block;
+  margin-right: 6px;
+}
+
+#education .slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  overflow-x: unset;
+  scroll-snap-type: none;
+  justify-items: center;
+}
+#education .project-card {
+  background: #1e1e2f;
+  padding: 20px 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 255, 170, 0.15);
+  border-left: 4px solid #4ce1b6;
+  width: 100%;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+#education .project-card:hover {
+  transform: translateY(-5px);
+}
+#education .project-card::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background-color: #4ce1b6;
+  border-radius: 50%;
+  border: 2px solid #1e1e2f;
+}
+#about {
+  padding: 60px 20px;
+  background: #0e0e1a;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.about-card {
+  background: #1e1e2f;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.15);
+  animation: slideUp 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.typewriter {
+  font-size: 1.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ffaa;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+  margin-bottom: 20px;
+  color: #00ffaa;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: #00ffaa;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #00ffaa;
+  }
+}
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1f1f2e;
+  color: #00ffaa;
+  padding: 8px 14px;
+  margin-top: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.1);
+}
+
+.github-link:hover {
+  background-color: #00ffaa;
+  color: #0e0e1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 255, 170, 0.3);
+}
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  flex: 0 0 300px;
+  background: #1c1c2e;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.slide-btn {
+  display: none;
+}
+.project-card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+.project-card a {
+  color: #fff;
+  text-decoration: none;
+  word-break: break-word;       /* breaks long links */
+  overflow-wrap: break-word;    /* wraps overflowing content */
+  display: inline-block;
+  max-width: 100%;
+}
+
+.project-card p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+}
+.project-card {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 10px;
+  overflow-wrap: break-word;
+}
+
+
+.dashboard-card {
+  text-align: center;
+}
+
+.dashboard-card .stat {
+  font-size: 48px;
+  font-weight: bold;
+  color: #4bc680;
+  margin: 10px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.dashboard-card .stat .plus {
+  font-size: 32px;
+  margin-left: 4px;
+  color: #fff;
+}
+
+.dashboard-card p {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 4px;
+}
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+  background: #4ce1b6;
+  border-radius: 4px;
+}
+
+.slider::-webkit-scrollbar-track {
+  background: #22232c;
+}
+.download-cv-container {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.download-cv-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #58d7bd;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.download-cv-btn:hover {
+  background: #008b8b;
+  color: #fff;
+}
+
+.download-cv-btn i {
+  margin-right: 8px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Praval Sugandhi</h1>
+    <p>Software Developer | Backend Development | Python Developer | API Developer</p>
+    <div class="download-cv-container">
+      <a href="Praval Sugandhi_2025.pdf" download class="download-cv-btn">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+    
+  </header>
+  <div class="container">
+<!-- -------------------------- about me -------------------------- -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-card">
+    <h3 class="typewriter">Hi, I’m Praval Sugandhi</h3>
+    <p>
+      A passionate Full Stack Developer with expertise in Python, Django, REST APIs, and modern frontend technologies.
+    </p>
+  </div>
+</section>
+
+<!-- -------------------------------------- education -------------------------- -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="slider">
+        <div class="cert-card">
+          <h4>Bachelor of Technology (B.Tech)-(2020 - 2024)</h4>
+          <p>Computer Science Engineering - Chameli Devi Group of Institutions -RGPV-(CGPA-8.69)</p>
+        </div>
+        <div class="cert-card">
+          <h4>Senior Secondary Education (XII)-State Board-(2019 - 2020) </h4>
+          <p>Alpine Public School(Per-75%)</p>
+        </div>
+        <div class="cert-card">
+          <h4>Secondary Education (X) - CBSE Board-(2017-2018)</h4>
+          <p>Shri Vaishnav Academy (Per-70%) </p>
+        </div>
+      </div>
+    </section>
+<!-- -- -------------------------- Internships -------------------------- -->
+<section id="internship">
+  <h2 class="section-title">Internships</h2>
+  <div class="slider">
+    <div class="project-card">
+      <h4>Python Development Intern</h4>
+      <p>Techno hacks EdTech (June 2023 - July 2023)</p>
+      <p>Developed backend APIs, optimized database queries, and contributed to scalable web applications using Python and Django.</p>
+      <a href="https://drive.google.com/file/d/13gJ7AscuQ1fj00dILXWaWgRa0jDNap9U/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+        <i class="fas fa-award"></i> View Certificate
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h4>Web Development and Design</h4>
+      <p>Txon (January 2022 - February 2023)</p>
+      <p>Built responsive and user-friendly web pages using HTML, CSS, and JavaScript to enhance user experience and interface design.</p>
+      <a href="https://drive.google.com/file/d/16GLOuBq_V_qOlBJ3cP75d4zNGvTnC6dE/view" target="_blank" class="github-link" rel="noopener">
+        <i class="fas fa-award"></i> View Certificate
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h4>Web Development and Design</h4>
+      <p>Oasis Infobyte (December 2022 - January 2023)</p>
+      <p>Built efficient, user-friendly websites with clean, semantic HTML, CSS, and responsive design for optimal performance.</p>
+      <a href="https://drive.google.com/file/d/1R-WzNWM3su06ZCcpuYJEmfeUVI9lcwh3/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+        <i class="fas fa-award"></i> View Certificate
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- -- -------------------------- experience -------------------------- -->
+
+<!-- <div class="project-card">
+  <h4>Quality Assurance (Manual Tester) </h4>
+  <p> Technotoil (September 2024 - Present)</p>
+  <p>Worked on backend development using Django and REST APIs.</p>
+</div> -->
+
+
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="slider">
+
+         <div class="project-card">
+          <h4>Looking for opportunity...</h4>
+          <p>Currently seeking full-time opportunities in software development.</p>
+        </div>
+
+
+        <div class="project-card">
+          <h4>Software Quality Assurance (Manual Tester) </h4>
+          <p>  Technotoil (September 2024 - Present)</p>
+          <p>I ensure the quality and functionality of software products by designing and executing tests, identifying bugs, and collaborating with the development team.
+          </p>
+        </div>
+        
+      </div>
+    </section>
+<!-- -- -------------------------- skills -------------------------- -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="slider">
+        <div class="project-card">
+          <h4>Frontend </h4>
+          <p>HTML, CSS, JavaScript, Bootstrap</p>
+        </div>
+        <div class="project-card">
+          <h4>Backend </h4>
+          <p>Python, Django, Flask, REST APIs</p>
+        </div>
+        <div class="project-card">
+          <h4>DataBase</h4>
+          <p> MySQL, SQLite</p>
+        </div>
+        <div class="project-card">
+          <h4> General Tools</h4>
+          <p>Git, Github, VS Code, JIRA, Phpmyadmin</p>
+        </div>
+        <div class="project-card">
+          <h4> Soft Skills</h4>
+          <p>Effective Communication, Public Speaking, Team Work</p>
+        </div>
+      </div>
+      
+    </section>
+<!-- -- -------------------------- projects -------------------------- -->
+<section id="projects" class="slider-section">
+  <h2 class="section-title">Projects</h2>
+  <div class="slider-container">
+    <button class="slide-btn prev">&#10094;</button>
+
+    <div class="slider" id="projectSlider">
+      <div class="project-card">
+        <h4>Instagram Post Analyzer</h4>
+        <p>Analyzes Instagram comments using NLP & BERT to classify emotions.</p>
+        <a href="https://github.com/PravalSugandhi4/Instagram-Post-Analyzer" target="_blank" class="github-link">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h4>Virtual Diary</h4>
+        <p>Virtual Diary is a secure digital space to capture your thoughts, emotions, and memories anytime, anywhere using Django.
+        </p>
+        <a href="https://github.com/PravalSugandhi4/virtualdiary/blob/main/README.md" target="_blank" class="github-link">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h4>DSA concepts</h4>
+        <p>Linked lists, Stacks, Queues etc.</p>
+        <a href="https://github.com/PravalSugandhi4/doubli-linked-list" target="_blank" class="github-link">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+      
+      <!-- Add more project-card items here -->
+    </div>
+
+    <button class="slide-btn next">&#10095;</button>
+  </div>
+</section>
+
+<!-- -------------------------- certificates -------------------------- -->
+
+
+    <section id="certificates" class="slider-section">
+      <h2 class="section-title">Certificates</h2>
+      <div class="slider">
+        <div class="cert-card">
+          <h4>AWS Academy Cloud Foundation </h4>
+          <p> Amazon Web Services (AWS) Issued on Oct 2022.</p>
+          <a href="https://drive.google.com/file/d/1qQtf9TOH1pJExGg9Iv3hbXUJhQbsevA2/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+            <i class="fas fa-award"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h4>Digital Skills  Artificial Intelligence </h4>
+          <p>Issued by Accenture.</p>
+          <a href="https://drive.google.com/file/d/1SZ23cv72J_P0kfvy8qtfIFt0yhHJa_f1/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+            <i class="fas fa-award"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h4>Interview Skills</h4>
+          <p>Issued by TCS.</p>
+          <a href="https://drive.google.com/file/d/12aDPjII8MNlJkNLAHiYUCKY1RqSeVjli/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+            <i class="fas fa-award"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h4>TCSION Carrier Edge Young Professional</h4>
+          <p>Issued by TCS.</p>
+          <a href="https://drive.google.com/file/d/1tHsmUVS4fr-WSHIxg204PoavikEPp_Ek/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+            <i class="fas fa-award"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h4>Power Programmer Virtual Experiance Program</h4>
+          <p>Issued by Infosys.</p>
+          <a href="https://drive.google.com/file/d/1ICyDdgPR7s1wTMPkYBtGaaUFajzM3fJ3/view?usp=sharing" target="_blank" class="github-link" rel="noopener">
+            <i class="fas fa-award"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h4>Python Programming</h4>
+          <p>Issued by DataFlair.</p>
+          <a href="https://drive.google.com/file/d/1IIevSWVLQqwEcK0kXWxcxd1D3iJqSART/view" target="_blank" class="github-link" rel="noopener">
+            <i class="fas fa-award"></i> View Certificate
+          </a>
+        </div>
+      </div>
+    </section>
+<!---------------practice dashboard ---------------------------------------->
+
+
+<section id="practice-dashboard" class="slider-section">
+  <h2 class="section-title">Practice Dashboard</h2>
+  <div class="slider">
+    <div class="project-card dashboard-card">
+      <h4>HackerRank</h4>
+      <div class="stat">
+        <span class="count" data-target="50">0</span><span class="plus">+</span>
+      </div>
+      <p>Problems solved</p>
+      <p>⭐ 5 Star in Problem Solving, SQL, Python</p>
+    </div>
+    <div class="project-card dashboard-card">
+      <h4>GeeksforGeeks</h4>
+      <div class="stat">
+        <span class="count" data-target="70">0</span><span class="plus">+</span>
+      </div>
+      <p>DSA Problems Solved</p>
+    </div>
+  </div>
+</section>
+
+       
+<!-- -------------------------- contact -------------------------- -->
+
+<!-- 
+<div class="contact-card">
+  <p>Email: <a href="mailto:praval@example.com">pravalsugandhi4@gmail.com</a></p>
+   <p>LinkedIn: <a href="https://linkedin.com/in/pravalsugandhi" target="_blank">/in/pravalsugandhi</a></p>
+  <p>GitHub: <a href="https://github.com/pravalsugandhi" target="_blank">/pravalsugandhi</a></p> 
+</div>
+ -->
+
+
+<!-- 
+ <section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="slider">
+    <div class="project-card">
+      <h4>Mobile</h4>
+      <p><a href="tel:+916262979178">+91 6262979178</a></p>
+    </div>
+    <div class="project-card">
+      <h4>Email</h4>
+      <p><a href="mailto:pravalsugandhi4@gmail.com">pravalsugandhi4@gmail.com</a></p>
+    </div>
+    <div class="project-card">
+      <h4>LinkedIn</h4>
+      <p><a href="https://linkedin.com/in/pravalsugandhi" target="_blank" rel="noopener">linkedin.com/in/pravalsugandhi</a></p>
+    </div>
+    <div class="project-card">
+      <h4>GitHub</h4>
+      <p><a href="https://github.com/pravalsugandhi" target="_blank" rel="noopener">github.com/pravalsugandhi</a></p>
+    </div>
+  </div>
+</section> -->
+
+
+<section id="skills">
+  <h2 class="section-title">Contact me</h2>
+  <div class="slider">
+    <div class="project-card">
+      <h4>Email </h4>
+      <p>pravalsugandhi4@gmail.com</p>
+    </div>
+    <div class="project-card">
+      <h4>Phone no.</h4>
+      <p>+91 6262979178</p>
+    </div>
+    <div class="project-card">
+      <h4>Linkedin</h4>
+      <p><a href="https://www.linkedin.com/in/praval-sugandhi-862b03218 " target="_blank" rel="noopener" >https://www.linkedin.com/in/praval-sugandhi-862b03218 </a></p>
+    </div>
+    <div class="project-card">
+      <h4> GitHub</h4>
+      <p><a href="https://github.com/PravalSugandhi4" target="_blank" rel="noopener">https://github.com/PravalSugandhi4</a></p>
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<!-- -- -------------------------- social links -------------------------- -->
+
+
+    <div class="social-links">
+      <a href="https://github.com/PravalSugandhi4" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/praval-sugandhi-862b03218 " target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:pravalsugandhi4@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+<!-- --------------------------footer -------------------------- -->
+
+  <footer>
+    &copy; 2025 Praval Sugandhi. All rights reserved.
+  </footer>
+
+  
+  
+
+
+
+  <script>
+    
+    const counters = document.querySelectorAll('.count');
+    const speed = 50; // lower is faster
+  
+    const runCount = (counter) => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+  
+        const inc = Math.ceil(target / speed);
+  
+        if (count < target) {
+          counter.innerText = count + inc;
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    };
+  
+    const triggerCounters = () => {
+      const section = document.getElementById('practice-dashboard');
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        counters.forEach(runCount);
+        window.removeEventListener('scroll', triggerCounters);
+      }
+    };
+  
+    window.addEventListener('scroll', triggerCounters);
+  </script>
+ 
+</body>
+</html>
